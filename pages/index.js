@@ -1,5 +1,6 @@
 function Home() {
-    return <h1>Obrigada por me ajudar! Isso é importante para mim.</h1>
+    var codigo = <div><h1>Obrigada por me ajudar!</h1></div>
+    return codigo
 }
 
 export default Home;
