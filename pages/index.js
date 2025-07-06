@@ -1,10 +1,12 @@
 function Home() {
   var codigo = (
     <div>
-      <hr>~*~*~</hr>
-      <h1>Obrigada por me ajudar!</h1>
-      <hr>~*~*~</hr>
       <br></br>
+      <br></br>
+      <br></br>
+      <hr></hr>
+      <h1>Obrigada por me ajudar!</h1>
+      <hr></hr>
     </div>
   );
   return codigo;
