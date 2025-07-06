@@ -4,13 +4,18 @@
   "description": "Projeto ponto a ponto, relembrando tecnologias.",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "lint:check": "prettier --check .",
+    "lint:fix": "prettier --write ."
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {     
+  "dependencies": {
     "next": "^13.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
   }
 }
