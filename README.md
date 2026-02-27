@@ -10,7 +10,7 @@ Pontos fortes do projeto:
 
 - Utilização de API para acesso ao banco de dados.
 
-- Padrão de testes no estilo estrela.
+- Padrão de testes no estilo trofeu.
 
 - Utilizando banco de dados postgres em container para garantir as configurações exatas necessarias na execução do projeto.
 
