@@ -20,6 +20,6 @@ Pontos fortes do projeto:
 
 - Definição de caminhos padrões para facilitar nos ´imports´ dos arquivos no projeto. Modelo MVC utilizado.
 
-
+- Tratamento de SQL injection.
 
 
