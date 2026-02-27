@@ -5,7 +5,7 @@ function Home() {
       <br></br>
       <br></br>
       <hr></hr>
-      <h1>Obrigada por me ajudar!</h1>
+      <h1>Obrigada por nada!</h1>
       <hr></hr>
     </div>
   );
