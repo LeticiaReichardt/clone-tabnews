@@ -3,12 +3,12 @@ import { join } from "node:path";
 import database from "infra/database.js";
 
 export default async function migrations(request, response) {
-  // const allowedMethods = ["GET", "POST"];
+  const allowedMethods = ["GET", "POST"];
 
-  // if (!allowedMethods.includes(req.method)) {
-  //   res.setHeader("Allow", allowedMethods);
-  //   return res.status(405).json({ error: "Method not allowed" });
-  // }
+  if (!allowedMethods.includes(req.method)) {
+    res.setHeader("Allow", allowedMethods);
+    return res.status(405).json({ error: "Method not allowed" });
+  }
 
   const dbClient = await database.getNewClient();
   const defaultMigrationOptions = {
@@ -22,6 +22,7 @@ export default async function migrations(request, response) {
 
   if (request.method === "GET") {
     const pendingMigrations = await migrationRunner(defaultMigrationOptions);
+    await dbClient.end();
     return response.status(200).json(pendingMigrations);
   }
 
@@ -31,7 +32,7 @@ export default async function migrations(request, response) {
       ...defaultMigrationOptions,
       dryRun: false,
     });
-
+    await dbClient.end();
     if (migrateMigrations.length > 0) {
       return response.status(201).json(migrateMigrations);
     }
