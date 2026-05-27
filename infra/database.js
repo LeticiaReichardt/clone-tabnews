@@ -17,6 +17,8 @@ async function query(queryObject) {
 
 async function getNewClient() {
   const client = new Client({
+    port: process.env.POSTGRES_PORT,
+    host: process.env.POSTGRES_HOST,
     user: process.env.POSTGRES_USER,
     database: process.env.POSTGRES_DB,
     password: process.env.POSTGRES_PASSWORD,
@@ -39,3 +41,4 @@ function getSSLValues() {
   }
   return process.env.NODE_ENV === "production" ? true : false;
 }
+console.log("Variaveis de ambiente: " + process.env.NODE_ENV);

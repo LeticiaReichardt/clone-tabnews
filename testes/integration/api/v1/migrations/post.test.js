@@ -13,7 +13,6 @@ test("POST to /api/v1/migrations shold retuen 200", async () => {
   expect(response1.status).toBe(201);
 
   const responseBody = await response1.json();
-  console.log(responseBody);
   expect(Array.isArray(responseBody)).toBe(true);
   expect(responseBody.length).toBeGreaterThan(0);
 
@@ -23,7 +22,6 @@ test("POST to /api/v1/migrations shold retuen 200", async () => {
   expect(response2.status).toBe(200);
 
   const responseBody2 = await response2.json();
-  console.log(responseBody2);
   expect(Array.isArray(responseBody2)).toBe(true);
   expect(responseBody2.length).toBe(0);
 });
