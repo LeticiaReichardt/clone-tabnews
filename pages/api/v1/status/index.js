@@ -26,6 +26,15 @@ async function status(request, response) {
       },
     },
   });
+  console.log("Status atualizado em: " + updateAt);
+  console.log("Versão do banco de dados: " + databaseVersionValue);
+  console.log(
+    "Máximo de conexões do banco de dados: " + databaseMaxConnectionsvalue,
+  );
+  console.log(
+    "Conexões abertas do banco de dados: " +
+      databaseOpenConnectionsResult.rows[0].count,
+  );
 }
 
 export default status;
