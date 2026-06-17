@@ -41,4 +41,3 @@ function getSSLValues() {
   }
   return process.env.NODE_ENV === "production" ? true : false;
 }
-console.log("Variaveis de ambiente: " + process.env.NODE_ENV);
