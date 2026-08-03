@@ -1,7 +1,14 @@
-test("DELETE to /api/v1/migrations should return 200", async () => {
+import orchestrator from "tests/orchestrator.js";
+
+beforeAll(async () => {
+  await orchestrator.waitForAllServices();
+});
+
+test("DELETE to /api/v1/migrations should return 405", async () => {
   const response1 = await fetch("http://localhost:3000/api/v1/migrations", {
     method: "DELETE",
   });
+  expect(response1.status).toBe(405);
   // const response = await fetch(
   //   " https://clone-tabnews-git-fix-migrati-461f1e-leticiareichardts-projects.vercel.app/api/v1/migrations",
   //   {
@@ -28,6 +35,6 @@ test("DELETE to /api/v1/migrations should return 200", async () => {
   //     },
   //   );
   // }
-  console.log("Teste de DELETE executado");
-  console.log(response1);
+  // console.log("Teste de DELETE executado");
+  // console.log(response1);
 });
